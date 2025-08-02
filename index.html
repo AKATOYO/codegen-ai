@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Código con IA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Generador de Código con IA</h1>
+    <button id="login">Iniciar sesión</button>
+    <button id="logout" style="display:none;">Cerrar sesión</button>
+  </header>
+
+  <main>
+    <label for="language">Lenguaje:</label>
+    <select id="language">
+      <option value="python">Python</option>
+      <option value="javascript">JavaScript</option>
+      <option value="c">C</option>
+      <option value="java">Java</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <!-- más lenguajes -->
+    </select>
+
+    <textarea id="prompt" placeholder="¿Qué código necesitas?" rows="5"></textarea>
+    <button id="generate">Generar Código</button>
+
+    <pre id="result"><code></code></pre>
+  </main>
+
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
