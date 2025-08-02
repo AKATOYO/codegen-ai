@@ -32,11 +32,11 @@
   </main>
 
   <!-- Clerk -->
-<script async crossorigin src="https://cdn.clerk.dev/clerk.browser.js"></script>
- <script>
+  <script async crossorigin src="https://cdn.clerk.dev/clerk.browser.js"></script>
+<script>
   window.Clerk.load({
-    frontendApi: "TU_FRONTEND_API",
-    publishableKey: "TU_PUBLISHABLE_KEY"
+    frontendApi: "radiant-tree-123.clerk.accounts.dev", // <- reemplaza esto
+    publishableKey: "pk_test_xxxxxxxxxx" // <- ya lo tienes
   }).then(async () => {
     const user = await Clerk.user;
 
@@ -50,7 +50,6 @@
     document.getElementById("logout").addEventListener("click", () => Clerk.signOut());
   });
 </script>
-
-  
+ 
 </body>
 </html>
