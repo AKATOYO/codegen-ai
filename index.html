@@ -31,8 +31,27 @@
     <pre id="result"><code></code></pre>
   </main>
 
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-  <script src="auth.js"></script>
-  <script src="app.js"></script>
+  <!-- Clerk -->
+<script async crossorigin src="https://cdn.clerk.dev/clerk.browser.js"></script>
+
+ <script>
+  window.Clerk.load({
+    frontendApi: "TU_FRONTEND_API",
+    publishableKey: "TU_PUBLISHABLE_KEY"
+  }).then(async () => {
+    const user = await Clerk.user;
+
+    if (!user) {
+      Clerk.openSignIn();
+    } else {
+      document.getElementById("login").textContent = `Hola, ${user.fullName || user.username}`;
+      document.getElementById("logout").style.display = "inline-block";
+    }
+
+    document.getElementById("logout").addEventListener("click", () => Clerk.signOut());
+  });
+</script>
+
+  
 </body>
 </html>
